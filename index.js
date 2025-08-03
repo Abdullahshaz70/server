@@ -56,9 +56,9 @@ app.post('/register', upload.single('photo'), async (req, res) => {
 
 
    
-    const verificationLink = `https://server-production-5e40.up.railway.app/verify?token=${verificationToken}`;
+    const BASE_URL = 'http://192.168.100.165:3000';
+    const verificationLink = `${BASE_URL}/verify?token=${verificationToken}`;
 
-   
     await transporter.sendMail({
       from: '"My App" <abdullah.s7062@gmail.com>',
       to: email,
